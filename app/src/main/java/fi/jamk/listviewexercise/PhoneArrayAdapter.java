@@ -26,13 +26,13 @@ public class PhoneArrayAdapter extends ArrayAdapter<String> {
     // populate every row in ListView
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // get row
+        //get row
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
-        // show phone name
+        //show phone name
         TextView textView = (TextView) rowView.findViewById(R.id.textView);
         textView.setText(phones.get(position));
-        // show phone icon/image
+        //show phone icon/image
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);
         switch (phones.get(position)) {
             case "Android": imageView.setImageResource(R.drawable.android); break;
@@ -42,7 +42,8 @@ public class PhoneArrayAdapter extends ArrayAdapter<String> {
             case "WebOS": imageView.setImageResource(R.drawable.webos); break;
             case "Ubuntu": imageView.setImageResource(R.drawable.ubuntu); break;
         }
-        // return row view
+
+        //return row view
         return rowView;
     }
 

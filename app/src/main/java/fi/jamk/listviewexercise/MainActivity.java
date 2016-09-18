@@ -17,13 +17,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
-        // find list view
+        //find list view
         ListView listview = (ListView) findViewById(R.id.listView);
 
-        // generate some dummy data
+        //generate some dummy data
         String[] phones = new String[]{
                 "Android", "iPhone", "WindowsMobile", "Blackberry", "WebOS", "Ubuntu",
                 "Android", "iPhone", "WindowsMobile", "Blackberry", "WebOS", "Ubuntu"
@@ -34,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < phones.length; ++i) {
             list.add(phones[i]);
         }
-
-        //add data to ArrayAdapter (own custom layout)
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.textView, list);
 
         //create custom adapter
         PhoneArrayAdapter adapter = new PhoneArrayAdapter(this, list);
@@ -56,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("phone", phone);
                 // start a new activity
                 startActivity(intent);
-            }
-        }
+               }
+           }
         );
     }
-
 }

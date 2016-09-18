@@ -11,19 +11,19 @@ public class DetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // draw activity detail layout
+        //draw activity detail layout
         setContentView(R.layout.activity_detail);
-        // get intent which has used to open this activity
+        //get intent which has used to open this activity
         Intent intent = getIntent();
-        // get data from intent
+        //get data from intent
         Bundle bundle = intent.getExtras();
-        // get phone name
+        //get phone name
         String phone = bundle.getString("phone");
-        // update text and image views to show data
+        //update text and image views to show data
         TextView textView = (TextView) findViewById(R.id.phoneTextView);
         textView.setText(phone);
         ImageView imageView = (ImageView) findViewById(R.id.phoneImageView);
-        // show phone image
+        //show phone image
         switch (phone) {
             case "Android":
                 imageView.setImageResource(R.drawable.android);
@@ -45,10 +45,9 @@ public class DetailActivity extends Activity {
                 break;
         }
     }
-    public void backButtonPressed(View view) {
-        // finish and close activity
+
+    public void backButtonPressed(View view){
+        //finish and close activity
         finish();
     }
-
 }
-
